@@ -1,0 +1,25 @@
+# Enable Server Side Include - SSI
+# http://httpd.apache.org/docs/current/en/howto/ssi.html
+<IfModule mod_include.c>
+	Options +Includes
+	# SSI FOR .shtml FILES
+	AddType text/html .shtml
+	AddOutputFilter INCLUDES .shtml
+	# SSI FOR .html FILES
+	# Note : the .html file should have the execute bit set
+	# Go to shell and execute : chmod +x myfile.html
+	XBitHack on
+	BrowserMatchNoCase macintosh Mac
+	BrowserMatchNoCase MSIE InternetExplorer
+	BrowserMatchNoCase safari Safari
+	BrowserMatchNoCase chrome Chrome
+	BrowserMatchNoCase webkit Webkit
+	BrowserMatchNoCase mozilla Mozilla
+	BrowserMatchNoCase firefox Firefox
+	BrowserMatchNoCase opera Opera
+	BrowserMatchNoCase ios iOS
+	BrowserMatchNoCase iphone iPhone
+	BrowserMatchNoCase ipad iPad
+	BrowserMatchNoCase android Android
+	BrowserMatchNoCase mobile Mobile
+</IfModule>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>SSI Test</TITLE>
+</head>
+<body>
+	<!--#config errmsg="[It appears that you don't know how to use SSI]" -->
+	<!--#config sizefmt="abbrev" -->
+	<!--#config timefmt="%A %d %B %d %Y" -->
+	<p>Aujourd'hui : <!--#echo var="DATE_LOCAL" --></p>
+	<p>Date de la dernière modification de ce fichier : <!--#flastmod file="test-ssi.html" --></p>
+	<p>Date de la dernière modification de ce fichier : <!--#config timefmt="%D" --><!--#echo var="LAST_MODIFIED" --></p>
+	<p>Taille de ce fichier : <!--#sizefmt file="test-ssi.html" --></p>
+
+	<pre><!--#exec cmd="ls" --></pre>
+	
+	<p>
+		<!--#if expr="${Mac} && ${Safari}" -->
+		Apologetic text goes here
+		<!--#else -->
+		Cool JavaScript code goes here
+		<!--#endif -->
+	</p>
+	Include footer.html : <!--#include virtual="/footer.html" -->
+</body>
+</html>
